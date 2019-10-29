@@ -25,15 +25,11 @@ SCRAPING_HEADERS = {
 logger = getLogger("newtrackon_logger")
 
 my_ipv4 = (
-    subprocess.check_output(["curl", "-s", "-4", "https://icanhazip.com/"])
+    subprocess.check_output(["curl", "-s", "-4", "https://api.ip.sb/ip"])
     .decode("utf-8")
     .strip()
 )
-my_ipv6 = (
-    subprocess.check_output(["curl", "-s", "-6", "https://icanhazip.com/"])
-    .decode("utf-8")
-    .strip()
-)
+
 to_redact = [str(HTTP_PORT), str(UDP_PORT)]
 
 
